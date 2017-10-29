@@ -1,3 +1,5 @@
+# code for exercises
+
 import mnist_loader
 import time
 import random
@@ -68,7 +70,7 @@ class MnistModel:
         self.bias = [ b-lr*db/len(data) for b, db in zip(self.bias, delta_b) ]
         self.weights = [ w-lr*dw/len(data) for w, dw in zip(self.weights, delta_w) ]
 
-    # sum all delta b & w
+    # mini-batch backprop
     def bp(self, x, y):
         a_s = [x]
         z_s = []
